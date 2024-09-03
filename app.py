@@ -1,27 +1,24 @@
 import streamlit as st
 import cv2
 import time
-import os
-from dotenv import load_dotenv
 from pyzbar.pyzbar import decode
 from google.oauth2.service_account import Credentials
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
-load_dotenv()
 
 credentials_info = {
-    "type": os.getenv("GOOGLE_TYPE"),
-    "project_id": os.getenv("GOOGLE_PROJECT_ID"),
-    "private_key_id": os.getenv("GOOGLE_PRIVATE_KEY_ID"),
-    "private_key": os.getenv("GOOGLE_PRIVATE_KEY"),
-    "client_email": os.getenv("GOOGLE_CLIENT_EMAIL"),
-    "client_id": os.getenv("GOOGLE_CLIENT_ID"),
-    "auth_uri": os.getenv("GOOGLE_AUTH_URI"),
-    "token_uri": os.getenv("GOOGLE_TOKEN_URI"),
-    "auth_provider_x509_cert_url": os.getenv("GOOGLE_AUTH_PROVIDER_X509_CERT_URL"),
-    "client_x509_cert_url": os.getenv("GOOGLE_CLIENT_X509_CERT_URL"),
-  c  "universe_domain": os.getenv("GOOGLE_UNIVERSE_DOMAIN"),
+    "type": st.secrets["GOOGLE_TYPE"],
+    "project_id": st.secrets["GOOGLE_PROJECT_ID"],
+    "private_key_id": st.secrets["GOOGLE_PRIVATE_KEY_ID"],
+    "private_key": st.secrets["GOOGLE_PRIVATE_KEY"],
+    "client_email": st.secrets["GOOGLE_CLIENT_EMAIL"],
+    "client_id": st.secrets["GOOGLE_CLIENT_ID"],
+    "auth_uri": st.secrets["GOOGLE_AUTH_URI"],
+    "token_uri": st.secrets["GOOGLE_TOKEN_URI"],
+    "auth_provider_x509_cert_url": st.secrets["GOOGLE_AUTH_PROVIDER_X509_CERT_URL"],
+    "client_x509_cert_url": st.secrets["GOOGLE_CLIENT_X509_CERT_URL"],
+    "universe_domain": st.secrets["GOOGLE_UNIVERSE_DOMAIN"],
 }
 
 def scan_qr_code():
