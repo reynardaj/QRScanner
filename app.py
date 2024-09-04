@@ -8,17 +8,17 @@ from googleapiclient.discovery import build
 
 
 credentials_info = {
-    "type": st.secrets["GOOGLE_TYPE"],
-    "project_id": st.secrets["GOOGLE_PROJECT_ID"],
-    "private_key_id": st.secrets["GOOGLE_PRIVATE_KEY_ID"],
-    "private_key": st.secrets["GOOGLE_PRIVATE_KEY"],
-    "client_email": st.secrets["GOOGLE_CLIENT_EMAIL"],
-    "client_id": st.secrets["GOOGLE_CLIENT_ID"],
-    "auth_uri": st.secrets["GOOGLE_AUTH_URI"],
-    "token_uri": st.secrets["GOOGLE_TOKEN_URI"],
-    "auth_provider_x509_cert_url": st.secrets["GOOGLE_AUTH_PROVIDER_X509_CERT_URL"],
-    "client_x509_cert_url": st.secrets["GOOGLE_CLIENT_X509_CERT_URL"],
-    "universe_domain": st.secrets["GOOGLE_UNIVERSE_DOMAIN"],
+    "type": st.secrets["google"]["type"],
+    "project_id": st.secrets["google"]["project_id"],
+    "private_key_id": st.secrets["google"]["private_key_id"],
+    "private_key": st.secrets["google"]["private_key"],
+    "client_email": st.secrets["google"]["client_email"],
+    "client_id": st.secrets["google"]["client_id"],
+    "auth_uri": st.secrets["google"]["auth_uri"],
+    "token_uri": st.secrets["google"]["token_uri"],
+    "auth_provider_x509_cert_url": st.secrets["google"]["auth_provider_x509_cert_url"],
+    "client_x509_cert_url": st.secrets["google"]["client_x509_cert_url"],
+    "universe_domain": st.secrets["google"]["universe_domain"],
 }
 
 def scan_qr_code():
